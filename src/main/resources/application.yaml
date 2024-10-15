@@ -1,0 +1,56 @@
+spring:
+  datasource:
+    url: jdbc:${DB_DRIVER:postgresql}://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:explorer_db}?currentSchema=${DB_SCHEMA:network_monitoring_agg}
+    username: ${DB_USER:cardano}
+    password: ${DB_PASSWORD:ch@ng3m3}
+  flyway:
+    locations:
+      - classpath:db/store/{vendor}
+      - classpath:db/store/explorer_db
+    out-of-order: 'true'
+  application:
+    name: cf-network-monitoring-aggregator
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+apiPrefix: /api/v1
+
+server:
+  port: '8080'
+
+store:
+  cardano:
+    protocol-magic: ${PROTOCOL_MAGIC:764824073}
+    host: ${CARDANO_NODE_HOST:backbone.mainnet.cardanofoundation.org}
+    port: ${CARDANO_NODE_PORT:3001}
+    sync-start-slot: ${INDEXER_START_SLOT:130636802}
+    sync-start-blockhash: ${INDEXER_START_HASH:76bd3b677fb89609d7b1206f8df2f03158bdf2fa046957fe1abf93dc9558a3ec}
+  blocks:
+    epoch-calculation-interval=14400:
+
+explorer:
+  aggregation:
+    transaction-adoption:
+      enabled: true
+      wallets: ${TRANSACTION_ADOPTION_WALLET_ADDRESSES:}
+    transaction-adoption-6h:
+      enabled: false
+      wallets: ${TRANSACTION_ADOPTION_6h_WALLET_ADDRESSES:}
+
+---
+spring:
+  config:
+    activate:
+      on-profile: preprod
+
+network: preprod
+
+store:
+  cardano:
+    protocol-magic: ${PROTOCOL_MAGIC:1}
+    port: ${CARDANO_NODE_PORT:30000}
+    host: ${CARDANO_NODE_HOST:preprod-node.world.dev.cardano.org}
+    sync-start-slot: ${INDEXER_START_SLOT:}
+    sync-start-blockhash: ${INDEXER_START_HASH:}
+
