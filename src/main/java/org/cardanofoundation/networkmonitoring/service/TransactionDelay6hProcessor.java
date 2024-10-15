@@ -20,13 +20,13 @@ import java.util.List;
 @RequiredArgsConstructor
 @Slf4j
 @ConditionalOnProperty(
-        prefix = "explorer.aggregation",
+        prefix = "aggregation",
         name = "transaction-delay-6h.enabled",
         havingValue = "true"
 )
 public class TransactionDelay6hProcessor {
 
-    @Value("${explorer.aggregation.transaction-adoption-6h.wallets}")
+    @Value("${aggregation.transaction-adoption-6h.wallets}")
     private final List<String> wallets;
 
     private final ObjectMapper objectMapper;

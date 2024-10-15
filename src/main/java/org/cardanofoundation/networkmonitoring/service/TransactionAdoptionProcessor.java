@@ -28,13 +28,13 @@ import static org.cardanofoundation.networkmonitoring.model.Constants.TRANSACTIO
 @RequiredArgsConstructor
 @Slf4j
 @ConditionalOnProperty(
-        prefix = "explorer.aggregation",
+        prefix = "aggregation",
         name = "transaction-adoption.enabled",
         havingValue = "true"
 )
 public class TransactionAdoptionProcessor {
 
-    @Value("${explorer.aggregation.transaction-adoption.wallets}")
+    @Value("${aggregation.transaction-adoption.wallets}")
     private final List<String> wallets;
 
     private final ObjectMapper objectMapper;
