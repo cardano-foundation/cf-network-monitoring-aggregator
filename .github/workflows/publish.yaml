@@ -42,9 +42,9 @@ jobs:
         run: |
           pip install yq
 
-      - name: Setup maven settings.xml
-        run: |
-          envsubst < ./.m2/settings.default.xml.tpl > ./.m2/settings.xml
+#      - name: Setup maven settings.xml
+#        run: |
+#          envsubst < ./.m2/settings.default.xml.tpl > ./.m2/settings.xml
 
       - name: Set extra environment and metadata
         id: metadata
