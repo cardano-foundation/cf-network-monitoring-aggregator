@@ -22,6 +22,6 @@ public class TransactionAdoptionChart {
     @Enumerated(EnumType.STRING)
     private IntervalType intervalType;
 
-    private Float avgAdoptionTimeSeconds;
+    private Double avgAdoptionTimeSeconds;
 
 }

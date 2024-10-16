@@ -10,6 +10,6 @@ public interface TransactionAdoptionDelay {
     LocalDateTime getTimeBucket();
 
     @Value("#{target.AVG_ADOPTION_TIME_SECONDS}")
-    Float getAvgAdoptionTimeSeconds();
+    Double getAvgAdoptionTimeSeconds();
 
 }
