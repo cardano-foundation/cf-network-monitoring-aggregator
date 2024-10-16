@@ -10,7 +10,7 @@
     </parent>
     <groupId>org.cardanofoundation</groupId>
     <artifactId>cf-network-monitoring-aggregator</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>0.0.1</version>
     <name>cf-network-monitoring-aggregator</name>
     <description>cf-network-monitoring-aggregator</description>
     <url/>

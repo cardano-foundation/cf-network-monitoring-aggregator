@@ -24,8 +24,8 @@ store:
     protocol-magic: 764824073
     host: backbone.mainnet.cardanofoundation.org
     port: 3001
-    sync-start-slot: 130636802
-    sync-start-blockhash: 76bd3b677fb89609d7b1206f8df2f03158bdf2fa046957fe1abf93dc9558a3ec
+    sync-start-slot: 135707748
+    sync-start-blockhash: 561f9b9865df6c3cbb8996de409a4de3b7f3ea9c906b9f616647e22d8a3f9866
   blocks:
     epoch-calculation-interval=14400:
 
