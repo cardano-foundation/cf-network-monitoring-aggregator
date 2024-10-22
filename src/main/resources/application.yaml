@@ -32,10 +32,10 @@ store:
 aggregation:
   transaction-adoption:
     enabled: true
-    wallets: ${TRANSACTION_ADOPTION_WALLET_ADDRESSES:}
+    wallets: ""
   transaction-adoption-6h:
     enabled: false
-    wallets: ${TRANSACTION_ADOPTION_6h_WALLET_ADDRESSES:}
+    wallets: ""
 
 ---
 spring:
