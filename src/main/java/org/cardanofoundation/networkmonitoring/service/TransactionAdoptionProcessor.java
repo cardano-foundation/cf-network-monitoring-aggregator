@@ -68,8 +68,8 @@ public class TransactionAdoptionProcessor {
         for (int i = 0; i < outputs.size(); i++) {
             var transactionOutput = outputs.get(i);
             if (isRelevantAddress(transactionOutput.getAddress())) {
-                var json = transaction.getAuxData().getMetadataJson();
                 try {
+                    var json = transaction.getAuxData().getMetadataJson();
                     var transactionAdoptionMetadataMap = objectMapper.readValue(json, TRANSACTION_ADOPTION_TYPE);
 
                     var transactionAdoptionMetadata = transactionAdoptionMetadataMap.get(TRANSACTION_ADOPTION_METADATA_KEY);
